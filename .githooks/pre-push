@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Get the current branch name
+branch=$(git symbolic-ref --short HEAD)
+
+# 🚫 1. Prevent branch creation from 'main'
+protected_branch="main"
+if [ "$branch" = "$protected_branch" ]; then
+    echo "🚨 ERROR: You cannot create new branches directly from 'main'."
+    echo "⏩ Create a new branch from 'development' instead."
+    exit 1
+fi
+
+# 🚫 2. Prevent direct pushes to 'main'
+if [ "$branch" = "main" ]; then
+    echo "🚨 ERROR: Direct push to 'main' is not allowed!"
+    echo "⏩ Please create a Pull Request to 'development' instead."
+    exit 1
+fi
+
+# 🚫 3. Prevent direct pushes to 'development'
+if [ "$branch" = "development" ]; then
+    echo "🚨 ERROR: Direct push to 'development' is not allowed!"
+    echo "⏩ Please create a feature branch and submit a Pull Request."
+    exit 1
+fi
