@@ -1,51 +1,49 @@
-# 🚀 Resume Maker Website Development Workflow Guide
 
-Welcome to this REPOSITORY! This guide explains the **Git workflow** that every developer must follow to maintain a structured development process.  
+# 🐾 PFA Gurugram NGO Website – Developer Git Workflow Guide
 
-**Key Workflow Rules:**
-✅ Developers work on separate feature branches  
-✅ PRs must be created for merging into `development`  
-✅ 🚫 No direct pushes to `main` or `development`  
-✅ Only the **Lead Developer** can merge `development` into `main`  
+Welcome to the official **PFA Gurugram NGO Website Repository**!  
+This guide outlines the **Git workflow** that all contributors must follow to ensure clean and collaborative development.
 
 ---
 
-## **📌 1. Setting Up Your Local Repository**
-Before you start coding, set up your local development environment.
+## 🌱 Core Workflow Principles:
+✅ Developers **work on feature branches** only  
+✅ **Pull Requests (PRs)** must target the `development` branch  
+🚫 **No direct pushes** allowed to `main` or `development`  
+🔒 Only the **Lead Developer** or Maintainer merges `development` into `main`  
 
-### **🔹 Clone the Repository**
-Open your terminal and run:
+---
 
+## 📌 1. Setting Up Your Local Development Environment
+
+### 🔹 Clone the Repository
 ```bash
 git clone <repo-url>
-cd <repo-name>
+cd <repo-folder>
 ```
 
-### **🔹 Switch to the Development Branch**
+### 🔹 Checkout the Development Branch
 ```bash
 git checkout development
 git pull origin development
 ```
-## **📌 2. Setting Up Pre-Push Git Hooks  - Again Switch first to Development Branch before running this script**
-To **prevent accidental direct pushes** to `main` and `development`, developers must set up Git hooks.
 
-### **🔹 Install Pre-Push Hook (One-Time Setup)**
-Run this command **once** after cloning the repo:
+---
+
+## 📌 2. Git Hook to Prevent Unsafe Pushes
+
+To avoid **accidental pushes** to protected branches:
+
+### 🔹 Run Hook Setup Script (One-Time)
+Make sure you're on `development` branch first, then:
 
 ```bash
 bash setup-hooks.sh
 ```
 
-### **🔹 Manually Installing the Hook (If Needed)**
-If the script doesn't work, install it manually.
+### 🔹 Manual Hook Setup (If Needed)
 
-#### **💻 For Mac & Linux**
-```bash
-cp .githooks/pre-push .git/hooks/pre-push
-chmod +x .git/hooks/pre-push
-```
-
-#### **🖥️ For Windows (Git Bash / WSL)**
+#### 💻 For Linux/Mac or Windows Git Bash
 ```bash
 cp .githooks/pre-push .git/hooks/pre-push
 chmod +x .git/hooks/pre-push
@@ -53,89 +51,97 @@ chmod +x .git/hooks/pre-push
 
 ---
 
-## **📌 3. Creating a New Feature Branch**
-Every new feature or bug fix should be done on a **separate branch**.
+## 📌 3. Create a New Feature Branch
 
-### **🔹 Create a New Feature Branch**
+Each feature, fix, or enhancement should be built on a **separate branch**:
+
 ```bash
 git checkout -b feature/your-feature-name
 ```
 
-💡 **Example:**  
+💡 **Example:**
 ```bash
-git checkout -b feature/seo-optimization
+git checkout -b feature/donation-form-ui
 ```
 
 ---
 
-## **📌 4. Writing & Committing Your Code**
-After making your changes, commit them:
+## 📌 4. Code & Commit Your Changes
 
-### **🔹 Check Modified Files**
+### 🔹 View Changes
 ```bash
 git status
 ```
 
-### **🔹 Stage Files for Commit**
+### 🔹 Stage Files
 ```bash
 git add .
 ```
 
-### **🔹 Commit with a Meaningful Message**
+### 🔹 Commit with a Descriptive Message
 ```bash
-git commit -m "Added login authentication feature"
+git commit -m "Add UI for donation form"
 ```
 
 ---
 
-## **📌 5. Pushing Code to GitHub**
-Once committed, push your branch to GitHub:
+## 📌 5. Push Your Feature Branch
 
 ```bash
 git push origin feature/your-feature-name
 ```
 
-💡 **Example:**  
+💡 **Example:**
 ```bash
-git push origin feature/seo-optimization
+git push origin feature/donation-form-ui
 ```
 
 ---
 
-## **📌 6. Creating a Pull Request (PR)**
-After pushing your code, **create a PR to merge into `development`**.
+## 📌 6. Submit a Pull Request (PR)
 
-### **🔹 Steps to Submit a PR**
-1. **Go to GitHub Repository**  
-2. Click on **Pull Requests**  
-3. Click **"New Pull Request"**  
-4. **Base Branch:** `development`  
-5. **Compare Branch:** `feature/your-feature-name`  
-6. Click **"Create Pull Request"**  
-7. Add a **title & description** explaining your changes  
-8. Assign the **Lead Developer as a reviewer**  
-9. Click **"Submit"**  
+Once pushed, create a **PR into `development`**:
 
----
-
-
-
-## **📌 7. What Happens After PR Submission?**
-1️⃣ **Only Approved Member will reviews your PR**  
-2️⃣ If approved, they **merge it into `development`**  
-3️⃣ Once `development` is stable, the **team will merge it into `main`**  
-4️⃣ ✅ `main` is deployed automatically to production 🚀  
+### 🔹 PR Submission Steps
+1. Go to the PFA Gurugram GitHub repository  
+2. Navigate to **Pull Requests → New Pull Request**  
+3. Set:
+   - **Base Branch:** `development`  
+   - **Compare Branch:** `feature/your-feature-name`  
+4. Add a clear **title** and **description**  
+5. Assign a **reviewer from the Dev Team**  
+6. Click **Create Pull Request**
 
 ---
 
-## **📌 8. 🚨 Important Workflow Rules**
-✅ **Do not forget to take pull from development-branch in your feature-branch before pushing your code**
-🚫 **DO NOT push code directly to `main` or `development`.**  
-✅ **ALWAYS create a feature branch for your work.**  
-🔍 **PRs must be reviewed before merging.**  
-🚀 **Only the DCOIL Tech Team can merge `development` into `main`.**  
+## 📌 7. What Happens Next?
+
+1️⃣ Your PR will be reviewed by a team member  
+2️⃣ If approved, it will be merged into `development`  
+3️⃣ Once tested and stable, the **Lead Developer** will merge into `main`  
+4️⃣ ✅ `main` is then deployed to the **production server for PFA Gurugram** 🐾
 
 ---
 
-## **🎯 You're Now Ready to Contribute! Happy Coding! 🚀**
+## 📌 8. 🚨 Important Workflow Rules
 
+✅ Always pull latest changes from `development` into your feature branch before pushing:  
+```bash
+git checkout feature/your-feature-name
+git pull origin development
+```
+
+🚫 **DO NOT push directly to `main` or `development`**
+
+✅ **Work ONLY on feature branches**
+
+🧪 **Code must be reviewed before it goes live**
+
+🚀 **Only the Lead Developer can merge `development` into `main`**
+
+---
+
+## 💚 Thank You for Supporting PFA Gurugram!
+
+Your contributions help build a stronger digital presence for the voiceless.  
+**Happy coding and compassion-driven development!** 🙌🐶🐱
