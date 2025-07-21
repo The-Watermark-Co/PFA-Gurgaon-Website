@@ -5,6 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+
     screens: {
       'tablet': '640px',
       // => @media (min-width: 640px) { ... }
@@ -18,3 +19,4 @@ export default {
   },  
   plugins: [],
 }
+
