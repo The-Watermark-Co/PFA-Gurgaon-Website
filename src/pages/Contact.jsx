@@ -23,13 +23,12 @@ const Contact = () => {
           </p>
         </div>
       </div>
-
       {/* -------------------- Contact Section -------------------- */}
       <div className="max-w-6xl mx-auto py-16 px-4">
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* ---------- Left: Contact Form ---------- */}
-          <form className="flex-1 bg-white p-8 rounded-lg shadow space-y-6">
-            {/* Name Inputs */}
+        <div className="flex flex-col md:flex-row gap-8 w-full">
+          {/* ---------- Left: Contact Form (60%) ---------- */}
+          <form className="w-full md:w-3/5 bg-white p-8 rounded-lg shadow space-y-6">
+            {/* Your existing form content remains the same */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="text-sm font-medium">First Name</label>
@@ -49,7 +48,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Email & Phone */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="text-sm font-medium">Email</label>
@@ -69,7 +67,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Subject */}
             <div>
               <label className="text-sm font-medium">Subject</label>
               <input
@@ -79,7 +76,6 @@ const Contact = () => {
               />
             </div>
 
-            {/* Message */}
             <div>
               <label className="text-sm font-medium">Message</label>
               <textarea
@@ -97,8 +93,8 @@ const Contact = () => {
             </button>
           </form>
 
-          {/* ---------- Right: Contact Info ---------- */}
-          <div className="w-full md:w-[300px] lg:w-[350px] bg-white p-8 rounded-lg shadow space-y-6">
+          {/* ---------- Right: Contact Info (40%) ---------- */}
+          <div className="w-full md:w-2/5 bg-white p-8 rounded-lg shadow space-y-6">
             <div className="flex items-center space-x-4">
               <i className="fas fa-envelope text-xl text-gray-600" />
               <span className="text-gray-700">support@skillbridge.com</span>
