@@ -32,10 +32,14 @@ body {
   font-size: 1.125rem;
 }
 
-i{ 
+.nav-social-links i{ 
   font-size: 1.3rem;
 }
 
 .newsreader {
   font-family: 'Newsreader', serif;
+}
+
+.footer-link h5 {
+  font-size: 0.8rem;
 }

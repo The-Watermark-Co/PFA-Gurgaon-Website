@@ -7,8 +7,11 @@ export default {
   theme: {
 
     screens: {
-      'tablet': '640px',
-      // => @media (min-width: 640px) { ... }
+      'sm': '600px',
+      // => @media (min-width: 600px) { ... }
+
+      'tablet': '768px',
+      // => @media (min-width: 768px) { ... }
 
       'laptop': '1024px',
       // => @media (min-width: 1024px) { ... }

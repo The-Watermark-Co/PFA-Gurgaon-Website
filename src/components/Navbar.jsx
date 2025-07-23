@@ -6,12 +6,12 @@ import { SlSocialLinkedin } from "react-icons/sl";
 
 const Navbar = () => {
   return (
-      <div className="w-full h-[70px] px-8 py-4 bg-zinc-100 flex justify-between items-center sticky">
+      <div className="w-full h-[70px] px-8 py-4 bg-transparent flex justify-between items-center sticky">
         <div className="w-[30%] flex items-center gap-10">
           <div className="">
             <img src={logo} className="w-16" />
           </div>
-          <div className="flex justify-between items-center gap-3">
+          <div className="nav-social-links flex justify-between items-center gap-3">
             <i><a href=""><FaFacebookF /></a></i>
             <i><a href=""><FaInstagram /></a></i>
             <i><a href=""><FiTwitter /></a></i>
