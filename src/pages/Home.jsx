@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import dog from "../assets/dog.png";
 import girl from "../assets/girl-with-cat.png";
-import { MdOutlineArrowOutward, MdArrowForwardIos, MdOutlineArrowBackIosNew } from "react-icons/md";
+import { MdOutlineArrowOutward, MdArrowForwardIos } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
 import { BiDonateHeart } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -18,8 +18,10 @@ import QuoteRight from '../assets/QuoteRight.png'
 import Maneka from '../assets/ManekaGandhi.png'
 import vector1 from '../assets/Vector1.png'
 import vector2 from '../assets/Vector2.png'
-import frame1 from '../assets/frame1.png'
-import frame2 from '../assets/frame2.png'
+import Slider from "../components/Slider";
+import frame3 from '../assets/frame3.png';
+import frame4 from '../assets/frame4.png';
+import ArticleSection from '../components/ArticleSection';
 
 
 const Home = () => {
@@ -158,7 +160,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-full h-auto bg-[#ffffff] flex flex-col justify-center items-center pt-12 pb-8 gap-8">
+      <div className="w-full h-auto bg-[#ffffff] flex flex-col justify-center items-center pt-12 gap-8">
         {/* Know Us Section */}
         <div className="know-us w-4/5 h-auto">
           <div className="w-full flex justify-center items-center">
@@ -248,9 +250,10 @@ const Home = () => {
         </div>
 
         {/* team section */}
-        <div className="w-full h-auto pt-20 px-4 sm:px-16 flex flex-col bg-slate-100">
-          <div className="w-full flex justify-center items-center">
-            <h4 className="font-bold text-2xl newsreader">MEET THE TEAM</h4>
+        <div className="w-full h-auto pt-10 sm:pt-20 px-4 sm:px-16 flex flex-col bg-slate-100">
+          <div className="w-full flex justify-center items-center flex-col gap-2">
+            <h6 className="text-[0.5rem] font-medium text-[#26744b] uppercase bg-[#dce8c1] py-2 px-3 rounded-[0.3rem]">Meet the team</h6>
+            <h4 className="font-bold text-2xl newsreader text-[#2e4049]">Great CareTaker</h4>
           </div>
           <div className="w-full flex gap-6 mt-10 flex-col sm:flex-row justify-center items-center ">
             <div className="w-full sm:w-1/2 h-60 sm:h-[30rem] overflow-hidden relative flex justify-center">
@@ -258,7 +261,7 @@ const Home = () => {
               <img src={vector2} alt="" className="w-full h-full absolute object-contain"/>
               <img src={Maneka} alt="" className="w-[90%] h-full absolute object-contain"/>
             </div>
-            <div className="w-full sm:w-[48%] h-96 px-6 pb-10 sm:p-0 flex flex-col gap-6 justify-around">
+            <div className="w-full sm:w-[48%] h-auto px-6 pb-10 sm:p-0 flex flex-col gap-6 justify-around">
               <div className="">
                 <p className="text-xs tracking-[1px] leading-6"> With the huddles that motherhood can attract, i plan to be the rainbow on a rainy day. This is a purposefully driven entity that is set to support what motherliness encompasses.</p>
                 <h6 className="text-base font-semibold mt-2">- Maneka Gandhi</h6>
@@ -267,24 +270,67 @@ const Home = () => {
                 <div>
                   <h4 className="font-semibold text-sm newsreader mb-4">Heroes</h4>
                 </div>
-                <div className="w-full relative flex items-center gap-6">
-                  <h4 className="bg-white p-3 text-xl absolute rounded-full shadow-md left-[-20px]"><i><MdOutlineArrowBackIosNew /></i></h4>
-                  <div className="sliderDiv w-full flex justify-center items-center gap-4">
-                    <div className="">
-                      <img src={frame1} alt="" />
-                    </div>
-                    <div>
-                      <img src={frame2} alt="" />
-                    </div>
-                  </div>
-                  <h4 className="bg-white p-3 text-xl absolute rounded-full shadow-md right-[-20px]"><i><MdArrowForwardIos /></i></h4>
+
+                {/* slider section */}
+                <div className="slider w-full">
+                  <Slider />
                 </div>
+
               </div>
             </div>
           </div>
         </div>
 
         {/* testimonial section */}
+        <div className="w-full h-auto pt-4 sm:pt-10 px-4 sm:px-16 flex flex-col">
+          <div className="w-full flex flex-col gap-3 items-center">
+            <h6 className="text-[0.5rem] font-medium text-[#26744b] uppercase bg-[#dce8c1] py-2 px-3 rounded-[0.3rem]">Every Life Counts</h6>
+            <h4 className="newsreader font-bold text-xl sm:text-2xl text-[#2e4049]">Rescue Stories / Testimonials</h4>
+            <div className="w-full sm:w-[60%]"><p className="text-sm sm:text-xs text-center">We are grateful to our supporters who share their stories of compassion and care for animals. Here are some of the heartwarming testimonials from our community.</p></div>
+          </div>
+
+          <div className="w-full flex justify-center gap-3 mt-12">
+            {[frame3, frame4, frame3].map((img, index) => (
+              <div key={index} className="w-[32%] relative group overflow-hidden rounded-xl">
+                  <img src={img} alt={`Frame ${index}`} className="w-full h-auto object-cover cursor-pointer" />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer p-4">
+                    <p className="text-white text-sm">Behind the Scenes of a Rescue Operation</p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+
+        {/* updates */}
+        <div className="w-full h-auto pt-8 pb-2 px-4 sm:px-8 tablet:px-12 flex flex-col sm:flex-row gap-4 justify-between mt-10 border-t-2">
+          <div className="flex flex-col gap-2 items-center sm:items-start">
+              <h4 className="font-bold text-lg text-[#2e4049]">Get update on success stories</h4>
+              <p className="text-[#475467] font-medium">Get directly on your email</p>
+          </div>
+
+          <div className="w- full flex flex-col gap-3">
+            <div className="flex flex-col items-center sm:items-start sm:flex-row gap-3">
+              <input type="text" className="w-full bg-transparent outline-0 border-2 py-1 px-3 rounded-lg border-[#d0d5dd]" placeholder="Enter your Email"/>
+              <button className="w-fit bg-[#92cd00] text-white font-semibold text-sm py-2 px-4 rounded-3xl">Subscribe</button>
+            </div>
+            <p className="text-[#475467] text-xs text-center sm:text-left">We care about your data in our <a href="" className="underline">privacy policy</a>.</p>
+          </div>
+        </div>
+
+        {/* Articles section */}
+        <div className="w-full h-auto bg-zinc-100 py-8 sm:py-20">
+          <div className="w-full flex flex-col gap-3 items-center">
+            <h6 className="text-[0.5rem] font-medium text-[#26744b] uppercase bg-[#dce8c1] py-2 px-3 rounded-[0.3rem]">Blogs</h6>
+            <h4 className="newsreader font-bold text-xl sm:text-2xl text-[#2e4049]">Look our latest articles</h4>
+          </div>
+
+          <div className="w-full h-auto flex flex-wrap justify-center items-center gap-5 mt-8 px-3 sm:px-0">
+            <ArticleSection />
+          </div>
+
+        </div>
 
       </div>
 
